@@ -1,3 +1,4 @@
+          retention-days: 30
 name: Build APK Flutter
 
 on:
@@ -17,7 +18,7 @@ jobs:
       - name: 🛠️ Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.x'
+          flutter-version: '3.24.3'
           channel: 'stable'
 
       - name: 📦 Install Dependensi

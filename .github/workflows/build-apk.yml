@@ -3,7 +3,7 @@ name: Build APK Flutter
 on:
   push:
     branches: [ main, master ]
-  workflow_dispatch:  # Bisa dijalankan manual kapan saja
+  workflow_dispatch:
 
 jobs:
   build:
@@ -34,5 +34,4 @@ jobs:
         with:
           name: Tutorial-Linux-APK
           path: build/app/outputs/flutter-apk/app-release.apk
-          retention-days: 30  # Tersimpan 30 hari
-
+          retention-days: 30

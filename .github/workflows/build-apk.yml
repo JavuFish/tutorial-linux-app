@@ -1,4 +1,3 @@
-          retention-days: 30
 name: Build APK Flutter
 
 on:

@@ -20,12 +20,6 @@ jobs:
           flutter-version: '3.47.0'
           channel: 'stable'
 
-      - name: 📱 Konfigurasi Android SDK
-        run: |
-          echo "ANDROID_HOME=$ANDROID_HOME" >> $GITHUB_ENV
-          flutter config --android-sdk "$ANDROID_HOME"
-          flutter config --no-android-studio
-
       - name: 📦 Install Dependensi
         run: flutter pub get
 

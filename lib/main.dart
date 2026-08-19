@@ -109,42 +109,78 @@ Contoh angka:
           const KartuPerintah(
             perintah: 'pwd',
             fungsi: 'Tampilkan jalur direktori saat ini',
-            contoh: r'$ pwd\n/home/andi/proyek/latihan',
+            contoh: r'''
+$ pwd
+/home/andi/proyek/latihan
+''',
           ),
           const KartuPerintah(
             perintah: 'ls',
             fungsi: 'Lihat isi folder',
-            contoh: r'$ ls              → tampil nama saja\n$ ls -l            → tampil detail\n$ ls -la           → + berkas tersembunyi\n$ ls -lh           → ukuran mudah dibaca\n$ ls -lt           → urutkan waktu ubah',
+            contoh: r'''
+$ ls              → tampil nama saja
+$ ls -l            → tampil detail
+$ ls -la           → + berkas tersembunyi
+$ ls -lh           → ukuran mudah dibaca
+$ ls -lt           → urutkan waktu ubah
+''',
           ),
           const KartuPerintah(
             perintah: 'cd',
             fungsi: 'Pindah ke direktori lain',
-            contoh: r'$ cd Dokumen          → masuk folder\n$ cd ..                → naik satu tingkat\n$ cd ../..             → naik dua tingkat\n$ cd /etc              → pindah langsung\n$ cd ~                 → kembali ke folder rumah\n$ cd -                 → kembali ke folder sebelumnya',
+            contoh: r'''
+$ cd Dokumen          → masuk folder
+$ cd ..                → naik satu tingkat
+$ cd ../..             → naik dua tingkat
+$ cd /etc              → pindah langsung
+$ cd ~                 → kembali ke folder rumah
+$ cd -                 → kembali ke folder sebelumnya
+''',
           ),
           const KartuPerintah(
             perintah: 'mkdir',
             fungsi: 'Buat folder baru',
-            contoh: r'$ mkdir proyek_baru\n$ mkdir -p a/b/c/d    → buat bertingkat\n$ mkdir dok{1,2,3}    → buat sekaligus',
+            contoh: r'''
+$ mkdir proyek_baru
+$ mkdir -p a/b/c/d    → buat bertingkat
+$ mkdir dok{1,2,3}    → buat sekaligus
+''',
           ),
           const KartuPerintah(
             perintah: 'cp',
             fungsi: 'Salin berkas/folder',
-            contoh: r'$ cp file.txt salinan.txt\n$ cp -r folder1 folder2     → salin folder + isi\n$ cp *.txt ~/Dokumen/       → salin semua .txt',
+            contoh: r'''
+$ cp file.txt salinan.txt
+$ cp -r folder1 folder2     → salin folder + isi
+$ cp *.txt ~/Dokumen/       → salin semua .txt
+''',
           ),
           const KartuPerintah(
             perintah: 'mv',
             fungsi: 'Pindah berkas atau ganti nama',
-            contoh: r'$ mv lama.txt baru.txt    → ganti nama\n$ mv file.txt ~/Unduhan/    → pindah ke folder lain',
+            contoh: r'''
+$ mv lama.txt baru.txt    → ganti nama
+$ mv file.txt ~/Unduhan/    → pindah ke folder lain
+''',
           ),
           const KartuPerintah(
             perintah: 'rm',
             fungsi: 'Hapus berkas/folder — ⚠️ TIDAK BISA DIKEMBALIKAN!',
-            contoh: r'$ rm sampah.txt\n$ rm -rf folder_saya        → hapus folder + SEMUA isinya\n$ rm *.tmp                  → hapus semua .tmp',
+            contoh: r'''
+$ rm sampah.txt
+$ rm -rf folder_saya        → hapus folder + SEMUA isinya
+$ rm *.tmp                  → hapus semua .tmp
+''',
           ),
           const KartuPerintah(
             perintah: 'cat / less / head / tail',
             fungsi: 'Lihat isi berkas teks',
-            contoh: r'$ cat catatan.txt        → tampil seluruh isi\n$ less buku.txt          → tampil halaman demi halaman (q=keluar)\n$ head -20 log.txt       → tampil 20 baris pertama\n$ tail -f /var/log/nginx/access.log  → pantau log real-time',
+            contoh: r'''
+$ cat catatan.txt        → tampil seluruh isi
+$ less buku.txt          → tampil halaman demi halaman (q=keluar)
+$ head -20 log.txt       → tampil 20 baris pertama
+$ tail -f /var/log/nginx/access.log  → pantau log real-time
+''',
           ),
 
           // ==============================================
@@ -154,27 +190,50 @@ Contoh angka:
           const KartuPerintah(
             perintah: 'chmod',
             fungsi: 'Ubah izin akses berkas',
-            contoh: r'$ chmod 755 skrip.sh    → rwx r-x r-x\n$ chmod 644 berkas.txt   → rw- r-- r--\n$ chmod +x program.sh    → tambah izin jalankan\n$ chmod -w rahasia.txt   → hapus izin tulis',
+            contoh: r'''
+$ chmod 755 skrip.sh    → rwx r-x r-x
+$ chmod 644 berkas.txt   → rw- r-- r--
+$ chmod +x program.sh    → tambah izin jalankan
+$ chmod -w rahasia.txt   → hapus izin tulis
+''',
           ),
           const KartuPerintah(
             perintah: 'chown',
             fungsi: 'Ubah pemilik dan/atau grup berkas',
-            contoh: r'$ sudo chown andi:andi file.txt\n$ sudo chown -R andi:andi folder/  → ubah SEMUA isi folder sekaligus',
+            contoh: r'''
+$ sudo chown andi:andi file.txt
+$ sudo chown -R andi:andi folder/  → ubah SEMUA isi folder sekaligus
+''',
           ),
           const KartuPerintah(
             perintah: 'useradd / usermod / userdel',
             fungsi: 'Buat, ubah, hapus pengguna',
-            contoh: r'$ sudo useradd -m budi     → buat pengguna + folder rumah\n$ sudo passwd budi          → atur kata sandi\n$ sudo userdel -r budi      → hapus pengguna + folder rumah',
+            contoh: r'''
+$ sudo useradd -m budi     → buat pengguna + folder rumah
+$ sudo passwd budi          → atur kata sandi
+$ sudo userdel -r budi      → hapus pengguna + folder rumah
+''',
           ),
           const KartuPerintah(
             perintah: 'df -h / du -sh',
             fungsi: 'Cek ruang disk & ukuran berkas/folder',
-            contoh: r'$ df -h          → sisa ruang tiap partisi\nFilesystem  Size  Used Avail Use%\n/dev/sda1    58G   12G   43G  22%\n\n$ du -sh Dokumen/   → ukuran folder\n145M    Dokumen/',
+            contoh: r'''
+$ df -h          → sisa ruang tiap partisi
+Filesystem  Size  Used Avail Use%
+/dev/sda1    58G   12G   43G  22%
+
+$ du -sh Dokumen/   → ukuran folder
+145M    Dokumen/
+''',
           ),
           const KartuPerintah(
             perintah: 'free -h',
             fungsi: 'Cek penggunaan memori RAM',
-            contoh: r'$ free -h\n              total        used        free\nMem:          8.0Gi       2.3Gi       5.7Gi',
+            contoh: r'''
+$ free -h
+              total        used        free
+Mem:          8.0Gi       2.3Gi       5.7Gi
+''',
           ),
 
           // ==============================================
@@ -184,22 +243,45 @@ Contoh angka:
           const KartuPerintah(
             perintah: 'grep',
             fungsi: 'Cari teks di dalam berkas atau output',
-            contoh: r'$ grep "error" log.txt        → cari baris berisi kata error\n$ grep -r "fungsi" .           → cari di SEMUA berkas\n$ grep -i "kata" berkas.txt    → cari tanpa bedakan huruf besar/kecil\n$ ls -la | grep ".txt"         → filter hasil ls',
+            contoh: r'''
+$ grep "error" log.txt        → cari baris berisi kata error
+$ grep -r "fungsi" .           → cari di SEMUA berkas
+$ grep -i "kata" berkas.txt    → cari tanpa bedakan huruf besar/kecil
+$ ls -la | grep ".txt"         → filter hasil ls
+''',
           ),
           const KartuPerintah(
             perintah: 'find',
             fungsi: 'Cari berkas berdasarkan nama, ukuran, waktu...',
-            contoh: r'$ find . -name "*.pdf"        → cari semua berkas PDF\n$ find /home -type d -name proyek  → cari folder bernama proyek\n$ find . -size +100M            → cari berkas > 100 MB\n$ find . -mtime -2              → diubah dalam 2 hari terakhir',
+            contoh: r'''
+$ find . -name "*.pdf"        → cari semua berkas PDF
+$ find /home -type d -name proyek  → cari folder bernama proyek
+$ find . -size +100M            → cari berkas > 100 MB
+$ find . -mtime -2              → diubah dalam 2 hari terakhir
+''',
           ),
           const KartuPerintah(
             perintah: 'sort / uniq / wc',
             fungsi: 'Urutkan, hapus duplikat, hitung baris/kata',
-            contoh: r'$ daftar.txt | sort              → urutkan A-Z\n$ daftar.txt | sort | uniq       → urutkan + hapus ganda\n$ wc -l buku.txt                 → hitung jumlah baris\n1240 buku.txt',
+            contoh: r'''
+$ daftar.txt | sort              → urutkan A-Z
+$ daftar.txt | sort | uniq       → urutkan + hapus ganda
+$ wc -l buku.txt                 → hitung jumlah baris
+1240 buku.txt
+''',
           ),
           const KartuPerintah(
             perintah: 'cut / paste',
             fungsi: 'Pilih kolom tertentu dari teks',
-            contoh: r'$ cat daftar.txt\nAndi 25 Jakarta\nBudi 30 Bandung\n\n$ cut -d" " -f1 daftar.txt      → ambil kolom pertama\nAndi\nBudi',
+            contoh: r'''
+$ cat daftar.txt
+Andi 25 Jakarta
+Budi 30 Bandung
+
+$ cut -d" " -f1 daftar.txt      → ambil kolom pertama
+Andi
+Budi
+''',
           ),
 
           // ==============================================
@@ -209,36 +291,62 @@ Contoh angka:
           const KartuPerintah(
             perintah: 'ps / top / htop',
             fungsi: 'Lihat proses yang sedang berjalan',
-            contoh: r'$ ps aux           → tampil SEMUA proses\n$ ps ef              → tampil + pohon hubungan\n$ htop               → tampilan interaktif cantik',
+            contoh: r'''
+$ ps aux           → tampil SEMUA proses
+$ ps ef              → tampil + pohon hubungan
+$ htop               → tampilan interaktif cantik
+''',
           ),
           const KartuPerintah(
             perintah: 'kill / killall / pkill',
             fungsi: 'Hentikan proses yang bermasalah',
-            contoh: r'$ kill 1234        → minta berhenti dengan sopan\n$ kill -9 1234     → PAKSA berhenti segera\n$ killall firefox  → hentikan semua proses firefox\n$ pkill -f node    → hentikan proses yang berisi kata node',
+            contoh: r'''
+$ kill 1234        → minta berhenti dengan sopan
+$ kill -9 1234     → PAKSA berhenti segera
+$ killall firefox  → hentikan semua proses firefox
+$ pkill -f node    → hentikan proses yang berisi kata node
+''',
           ),
           const KartuPerintah(
             perintah: 'systemctl / service',
             fungsi: 'Kelola layanan sistem',
-            contoh: r'$ sudo systemctl start nginx     → mulai server web\n$ sudo systemctl stop nginx      → hentikan\n$ sudo systemctl enable nginx    → nyalakan otomatis saat boot\n$ sudo systemctl status nginx    → cek status',
+            contoh: r'''
+$ sudo systemctl start nginx     → mulai server web
+$ sudo systemctl stop nginx      → hentikan
+$ sudo systemctl enable nginx    → nyalakan otomatis saat boot
+$ sudo systemctl status nginx    → cek status
+''',
           ),
           const KartuPerintah(
             perintah: 'ip / ifconfig / ping',
             fungsi: 'Konfigurasi & cek jaringan',
-            contoh: r'$ ip a              → lihat semua alamat IP\n$ ping google.com    → cek koneksi internet (Ctrl+C berhenti)\n$ ping -c 4 google.com  → kirim 4 kali lalu berhenti',
+            contoh: r'''
+$ ip a              → lihat semua alamat IP
+$ ping google.com    → cek koneksi internet (Ctrl+C berhenti)
+$ ping -c 4 google.com  → kirim 4 kali lalu berhenti
+''',
           ),
           const KartuPerintah(
             perintah: 'curl / wget / nc',
             fungsi: 'Unduh berkas & uji koneksi jaringan',
-            contoh: r'$ curl ifconfig.me          → lihat IP publik\n$ wget https://contoh.com/file.zip  → unduh berkas\n$ nc -zv google.com 443      → cek apakah port 443 terbuka',
+            contoh: r'''
+$ curl ifconfig.me          → lihat IP publik
+$ wget https://contoh.com/file.zip  → unduh berkas
+$ nc -zv google.com 443      → cek apakah port 443 terbuka
+''',
           ),
           const KartuPerintah(
             perintah: 'ssh / scp',
             fungsi: 'Masuk ke server jarak jauh & salin berkas',
-            contoh: r'$ ssh andi@192.168.1.100     → masuk ke server jarak jauh\n$ scp file.zip andi@server:/home/andi  → kirim berkas ke server\n$ scp andi@server:/home/andi/file.zip ./  → ambil berkas dari server',
+            contoh: r'''
+$ ssh andi@192.168.1.100     → masuk ke server jarak jauh
+$ scp file.zip andi@server:/home/andi  → kirim berkas ke server
+$ scp andi@server:/home/andi/file.zip ./  → ambil berkas dari server
+''',
           ),
 
           // ==============================================
-          // 📦 BAGIAN 6: MANAJEMEN PAKET — ✅ SUDAH DIPERBAIKI!
+          // 📦 BAGIAN 6: MANAJEMEN PAKET
           // ==============================================
           const BagianJudul('📦 BAGIAN 6 — Manajemen Paket & Pembaruan'),
           const KartuMateri(
@@ -310,7 +418,17 @@ fungsi_saya    → panggil fungsi
           const KartuPerintah(
             perintah: 'crontab',
             fungsi: 'Jadwalkan perintah berjalan otomatis',
-            contoh: r'$ crontab -e        → buka editor jadwal\n# menit jam tanggal bulan hari perintah\n  0 3 * * * ~/cadangan.sh          → tiap jam 3 pagi\n  */30 * * * * ~/cek_server.sh     → tiap 30 menit\n  0 8 * * 1-5 ~/laporan.sh         → Senin-Jumat jam 8 pagi\n  0 0 1 * * ~/bulanan.sh           → tiap tanggal 1 tengah malam\n\n$ crontab -l        → lihat daftar jadwal\n$ crontab -r        → hapus semua jadwal',
+            contoh: r'''
+$ crontab -e        → buka editor jadwal
+# menit jam tanggal bulan hari perintah
+  0 3 * * * ~/cadangan.sh          → tiap jam 3 pagi
+  */30 * * * * ~/cek_server.sh     → tiap 30 menit
+  0 8 * * 1-5 ~/laporan.sh         → Senin-Jumat jam 8 pagi
+  0 0 1 * * ~/bulanan.sh           → tiap tanggal 1 tengah malam
+
+$ crontab -l        → lihat daftar jadwal
+$ crontab -r        → hapus semua jadwal
+''',
           ),
 
           // ==============================================
@@ -320,17 +438,35 @@ fungsi_saya    → panggil fungsi
           const KartuPerintah(
             perintah: 'git',
             fungsi: 'Kontrol versi — kelola kode sumber',
-            contoh: r'$ git init .                  → buat repositori baru\n$ git add .                   → tandai semua berkas\n$ git commit -m "Versi pertama" → simpan perubahan\n$ git push origin main        → kirim ke GitHub\n$ git pull                    → ambil versi terbaru\n$ git status                  → lihat status berkas',
+            contoh: r'''
+$ git init .                  → buat repositori baru
+$ git add .                   → tandai semua berkas
+$ git commit -m "Versi pertama" → simpan perubahan
+$ git push origin main        → kirim ke GitHub
+$ git pull                    → ambil versi terbaru
+$ git status                  → lihat status berkas
+''',
           ),
           const KartuPerintah(
             perintah: 'tar / gzip / zip',
             fungsi: 'Kompresi & ekstrak berkas arsip',
-            contoh: r'$ tar -czf arsip.tar.gz folder/    → kompres jadi .tar.gz\n$ tar -xzf arsip.tar.gz                 → ekstrak .tar.gz\n$ zip -r arsip.zip folder/              → kompres jadi .zip\n$ unzip arsip.zip                       → ekstrak .zip',
+            contoh: r'''
+$ tar -czf arsip.tar.gz folder/    → kompres jadi .tar.gz
+$ tar -xzf arsip.tar.gz                 → ekstrak .tar.gz
+$ zip -r arsip.zip folder/              → kompres jadi .zip
+$ unzip arsip.zip                       → ekstrak .zip
+''',
           ),
           const KartuPerintah(
             perintah: 'alias',
             fungsi: 'Buat nama pendek untuk perintah panjang',
-            contoh: r'$ alias ll="ls -la"         → ketik ll = ls -la\n$ alias update="sudo apt update && sudo apt upgrade -y"\n$ update   → langsung jalankan update lengkap!\n\n# Agar permanen: tambahkan ke ~/.bashrc atau ~/.zshrc',
+            contoh: r'''
+$ alias ll="ls -la"         → ketik ll = ls -la
+$ alias update="sudo apt update && sudo apt upgrade -y"
+$ update   → langsung jalankan update lengkap!
+
+# Agar permanen: tambahkan ke ~/.bashrc atau ~/.zshrc
+''',
           ),
 
           // ==============================================

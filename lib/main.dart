@@ -39,14 +39,14 @@ class HalamanDaftarMateri extends StatelessWidget {
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
-        children: const [
+        children: [
           // ==============================================
           // 📘 BAGIAN 1: FILOSOFI & DASAR SISTEM
           // ==============================================
-          BagianJudul('📘 BAGIAN 1 — FILOSOFI & DASAR SISTEM'),
-          KartuMateri(
+          const BagianJudul('📘 BAGIAN 1 — FILOSOFI & DASAR SISTEM'),
+          const KartuMateri(
             judul: '4 Filosofi Inti Linux',
-            isi: '''
+            isi: r'''
 🔹 1. SEMUA ADALAH BERKAS
 Segala sesuatu di Linux — perangkat keras, proses, jaringan, printer — semuanya diperlakukan sebagai berkas teks/biner. Inilah kekuatan utama Linux.
 
@@ -61,9 +61,9 @@ Keamanan bukan tambahan — sudah tertanam. Setiap berkas punya pemilik, grup, d
 ''',
             icon: Icons.lightbulb,
           ),
-          KartuMateri(
+          const KartuMateri(
             judul: 'Struktur Sistem Berkas — Penjelasan Lengkap',
-            isi: '''
+            isi: r'''
 /           → Akar sistem, induk dari semua folder
 ├── /home   → Folder pribadi tiap pengguna (/home/andi, /home/budi)
 ├── /etc    → Konfigurasi sistem: passwd, hosts, nginx, ssh...
@@ -82,9 +82,9 @@ Keamanan bukan tambahan — sudah tertanam. Setiap berkas punya pemilik, grup, d
 ''',
             icon: Icons.folder_open,
           ),
-          KartuMateri(
+          const KartuMateri(
             judul: 'Pengguna, Grup & Izin — Pahami Sekali Selamanya',
-            isi: '''
+            isi: r'''
 👤 PENGGUNA: Setiap orang punya nama pengguna & ID unik (UID)
 👥 GRUP: Pengguna bisa masuk grup untuk berbagi izin (GID)
 🔐 IZIN: Tiap berkas punya 3 level — Pemilik | Grup | Lainnya
@@ -103,75 +103,75 @@ Contoh angka:
           ),
 
           // ==============================================
-          // ⌨️ BAGIAN 2: PERINTAH DASAR — PAKAI PALING SERING
+          // ⌨️ BAGIAN 2: PERINTAH DASAR
           // ==============================================
-          BagianJudul('⌨️ BAGIAN 2 — PERINTAH DASAR (Hafal Ini Dulu!)'),
-          KartuPerintah(
+          const BagianJudul('⌨️ BAGIAN 2 — PERINTAH DASAR (Hafal Ini Dulu!)'),
+          const KartuPerintah(
             perintah: 'pwd',
             fungsi: 'Tampilkan jalur direktori saat ini',
             contoh: r'$ pwd\n/home/andi/proyek/latihan',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'ls',
             fungsi: 'Lihat isi folder',
-            contoh: r'$ ls              → tampil nama saja\n$ ls -l            → tampil detail: izin, pemilik, ukuran, tanggal\n$ ls -la           → + tampil berkas tersembunyi\n$ ls -lh           → ukuran mudah dibaca\n$ ls -lt           → urutkan berdasarkan waktu',
+            contoh: r'$ ls              → tampil nama saja\n$ ls -l            → tampil detail\n$ ls -la           → + berkas tersembunyi\n$ ls -lh           → ukuran mudah dibaca\n$ ls -lt           → urutkan waktu ubah',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'cd',
             fungsi: 'Pindah ke direktori lain',
             contoh: r'$ cd Dokumen          → masuk folder\n$ cd ..                → naik satu tingkat\n$ cd ../..             → naik dua tingkat\n$ cd /etc              → pindah langsung\n$ cd ~                 → kembali ke folder rumah\n$ cd -                 → kembali ke folder sebelumnya',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'mkdir',
             fungsi: 'Buat folder baru',
-            contoh: r'$ mkdir proyek_baru\n$ mkdir -p a/b/c/d    → buat bertingkat otomatis\n$ mkdir dok{1,2,3}    → buat dok1, dok2, dok3 sekaligus',
+            contoh: r'$ mkdir proyek_baru\n$ mkdir -p a/b/c/d    → buat bertingkat\n$ mkdir dok{1,2,3}    → buat sekaligus',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'cp',
             fungsi: 'Salin berkas/folder',
-            contoh: r'$ cp file.txt salinan.txt\n$ cp -r folder1 folder2     → salin folder + isinya\n$ cp *.txt ~/Dokumen/       → salin semua .txt\n$ cp file{1,2}.txt          → salin file1 jadi file2',
+            contoh: r'$ cp file.txt salinan.txt\n$ cp -r folder1 folder2     → salin folder + isi\n$ cp *.txt ~/Dokumen/       → salin semua .txt',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'mv',
-            fungsi: 'Pindah berkas ATAU ganti nama',
-            contoh: r'$ mv lama.txt baru.txt    → ganti nama\n$ mv file.txt ~/Unduhan/    → pindah ke folder lain\n$ mv *.pdf ~/Dokumen/Buku/  → pindah semua PDF',
+            fungsi: 'Pindah berkas atau ganti nama',
+            contoh: r'$ mv lama.txt baru.txt    → ganti nama\n$ mv file.txt ~/Unduhan/    → pindah ke folder lain',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'rm',
             fungsi: 'Hapus berkas/folder — ⚠️ TIDAK BISA DIKEMBALIKAN!',
-            contoh: r'$ rm sampah.txt\n$ rm -rf folder_saya        → hapus folder + SEMUA isinya\n$ rm *.tmp                  → hapus semua berkas .tmp',
+            contoh: r'$ rm sampah.txt\n$ rm -rf folder_saya        → hapus folder + SEMUA isinya\n$ rm *.tmp                  → hapus semua .tmp',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'cat / less / head / tail',
             fungsi: 'Lihat isi berkas teks',
-            contoh: r'$ cat catatan.txt        → tampil seluruh isi\n$ less buku.txt          → tampil halaman demi halaman (q=keluar)\n$ head -20 log.txt       → tampil 20 baris pertama\n$ tail -f /var/log/nginx/access.log  → pantau log REAL-TIME',
+            contoh: r'$ cat catatan.txt        → tampil seluruh isi\n$ less buku.txt          → tampil halaman demi halaman (q=keluar)\n$ head -20 log.txt       → tampil 20 baris pertama\n$ tail -f /var/log/nginx/access.log  → pantau log real-time',
           ),
 
           // ==============================================
           // 🔐 BAGIAN 3: IZIN, PENGGUNA & MANAJEMEN SISTEM
           // ==============================================
-          BagianJudul('🔐 BAGIAN 3 — Izin, Pengguna & Manajemen Sistem'),
-          KartuPerintah(
+          const BagianJudul('🔐 BAGIAN 3 — Izin, Pengguna & Manajemen Sistem'),
+          const KartuPerintah(
             perintah: 'chmod',
             fungsi: 'Ubah izin akses berkas',
             contoh: r'$ chmod 755 skrip.sh    → rwx r-x r-x\n$ chmod 644 berkas.txt   → rw- r-- r--\n$ chmod +x program.sh    → tambah izin jalankan\n$ chmod -w rahasia.txt   → hapus izin tulis',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'chown',
             fungsi: 'Ubah pemilik dan/atau grup berkas',
             contoh: r'$ sudo chown andi:andi file.txt\n$ sudo chown -R andi:andi folder/  → ubah SEMUA isi folder sekaligus',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'useradd / usermod / userdel',
             fungsi: 'Buat, ubah, hapus pengguna',
             contoh: r'$ sudo useradd -m budi     → buat pengguna + folder rumah\n$ sudo passwd budi          → atur kata sandi\n$ sudo userdel -r budi      → hapus pengguna + folder rumah',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'df -h / du -sh',
             fungsi: 'Cek ruang disk & ukuran berkas/folder',
             contoh: r'$ df -h          → sisa ruang tiap partisi\nFilesystem  Size  Used Avail Use%\n/dev/sda1    58G   12G   43G  22%\n\n$ du -sh Dokumen/   → ukuran folder\n145M    Dokumen/',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'free -h',
             fungsi: 'Cek penggunaan memori RAM',
             contoh: r'$ free -h\n              total        used        free\nMem:          8.0Gi       2.3Gi       5.7Gi',
@@ -180,23 +180,23 @@ Contoh angka:
           // ==============================================
           // 🔍 BAGIAN 4: PIPA, FILTER & PENCARIAN
           // ==============================================
-          BagianJudul('🔍 BAGIAN 4 — Pipa, Filter & Pencarian'),
-          KartuPerintah(
+          const BagianJudul('🔍 BAGIAN 4 — Pipa, Filter & Pencarian'),
+          const KartuPerintah(
             perintah: 'grep',
             fungsi: 'Cari teks di dalam berkas atau output',
-            contoh: r'$ grep "error" log.txt        → cari baris berisi kata error\n$ grep -r "fungsi" .           → cari di SEMUA berkas\n$ grep -i "kata" berkas.txt    → cari TANPA bedakan huruf besar/kecil\n$ ls -la | grep ".txt"         → filter hasil ls',
+            contoh: r'$ grep "error" log.txt        → cari baris berisi kata error\n$ grep -r "fungsi" .           → cari di SEMUA berkas\n$ grep -i "kata" berkas.txt    → cari tanpa bedakan huruf besar/kecil\n$ ls -la | grep ".txt"         → filter hasil ls',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'find',
             fungsi: 'Cari berkas berdasarkan nama, ukuran, waktu...',
-            contoh: r'$ find . -name "*.pdf"        → cari semua berkas PDF\n$ find /home -type d -name proyek  → cari FOLDER bernama proyek\n$ find . -size +100M            → cari berkas > 100 MB\n$ find . -mtime -2              → diubah dalam 2 hari terakhir',
+            contoh: r'$ find . -name "*.pdf"        → cari semua berkas PDF\n$ find /home -type d -name proyek  → cari folder bernama proyek\n$ find . -size +100M            → cari berkas > 100 MB\n$ find . -mtime -2              → diubah dalam 2 hari terakhir',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'sort / uniq / wc',
             fungsi: 'Urutkan, hapus duplikat, hitung baris/kata',
             contoh: r'$ daftar.txt | sort              → urutkan A-Z\n$ daftar.txt | sort | uniq       → urutkan + hapus ganda\n$ wc -l buku.txt                 → hitung jumlah baris\n1240 buku.txt',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'cut / paste',
             fungsi: 'Pilih kolom tertentu dari teks',
             contoh: r'$ cat daftar.txt\nAndi 25 Jakarta\nBudi 30 Bandung\n\n$ cut -d" " -f1 daftar.txt      → ambil kolom pertama\nAndi\nBudi',
@@ -205,57 +205,57 @@ Contoh angka:
           // ==============================================
           // 🌐 BAGIAN 5: PROSES & JARINGAN
           // ==============================================
-          BagianJudul('🌐 BAGIAN 5 — Proses & Jaringan'),
-          KartuPerintah(
+          const BagianJudul('🌐 BAGIAN 5 — Proses & Jaringan'),
+          const KartuPerintah(
             perintah: 'ps / top / htop',
             fungsi: 'Lihat proses yang sedang berjalan',
             contoh: r'$ ps aux           → tampil SEMUA proses\n$ ps ef              → tampil + pohon hubungan\n$ htop               → tampilan interaktif cantik',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'kill / killall / pkill',
             fungsi: 'Hentikan proses yang bermasalah',
             contoh: r'$ kill 1234        → minta berhenti dengan sopan\n$ kill -9 1234     → PAKSA berhenti segera\n$ killall firefox  → hentikan semua proses firefox\n$ pkill -f node    → hentikan proses yang berisi kata node',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'systemctl / service',
-            fungsi: 'Kelola layanan sistem (mulai/hentikan/aktifkan otomatis)',
+            fungsi: 'Kelola layanan sistem',
             contoh: r'$ sudo systemctl start nginx     → mulai server web\n$ sudo systemctl stop nginx      → hentikan\n$ sudo systemctl enable nginx    → nyalakan otomatis saat boot\n$ sudo systemctl status nginx    → cek status',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'ip / ifconfig / ping',
             fungsi: 'Konfigurasi & cek jaringan',
             contoh: r'$ ip a              → lihat semua alamat IP\n$ ping google.com    → cek koneksi internet (Ctrl+C berhenti)\n$ ping -c 4 google.com  → kirim 4 kali lalu berhenti',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'curl / wget / nc',
             fungsi: 'Unduh berkas & uji koneksi jaringan',
             contoh: r'$ curl ifconfig.me          → lihat IP publik\n$ wget https://contoh.com/file.zip  → unduh berkas\n$ nc -zv google.com 443      → cek apakah port 443 terbuka',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'ssh / scp',
-            fungsi: 'Masuk ke server jarak jauh & salin berkas antar komputer',
+            fungsi: 'Masuk ke server jarak jauh & salin berkas',
             contoh: r'$ ssh andi@192.168.1.100     → masuk ke server jarak jauh\n$ scp file.zip andi@server:/home/andi  → kirim berkas ke server\n$ scp andi@server:/home/andi/file.zip ./  → ambil berkas dari server',
           ),
 
           // ==============================================
-          // 📦 BAGIAN 6: MANAJEMEN PAKET & PEMBARUAN
+          // 📦 BAGIAN 6: MANAJEMEN PAKET — ✅ SUDAH DIPERBAIKI!
           // ==============================================
-          BagianJudul('📦 BAGIAN 6 — Manajemen Paket & Pembaruan'),
-          KartuMateri(
+          const BagianJudul('📦 BAGIAN 6 — Manajemen Paket & Pembaruan'),
+          const KartuMateri(
             judul: 'Perintah Paket — Debian/Ubuntu & Termux',
-            isi: '''
+            isi: r'''
 🔹 UBUNTU/DEBIAN (PC/Server):
-\\$ sudo apt update && sudo apt upgrade -y   → update daftar + upgrade semua
-\\$ sudo apt install firefox                 → pasang program
-\\$ sudo apt remove firefox                  → hapus program
-\\$ apt search editor                        → cari program berdasarkan nama
-\\$ apt show firefox                         → lihat detail paket
+$ sudo apt update && sudo apt upgrade -y   → update daftar + upgrade semua
+$ sudo apt install firefox                 → pasang program
+$ sudo apt remove firefox                  → hapus program
+$ apt search editor                        → cari program berdasarkan nama
+$ apt show firefox                         → lihat detail paket
 
 🔹 TERMUX (Android):
-\\$ pkg update && pkg upgrade -y             → update sistem Termux
-\\$ pkg install nodejs python git            → pasang paket
-\\$ pkg remove nodejs                        → hapus paket
-\\$ pkg search flutter                       → cari paket
+$ pkg update && pkg upgrade -y             → update sistem Termux
+$ pkg install nodejs python git            → pasang paket
+$ pkg remove nodejs                        → hapus paket
+$ pkg search flutter                       → cari paket
 ''',
             icon: Icons.install_desktop,
           ),
@@ -263,8 +263,8 @@ Contoh angka:
           // ==============================================
           // 🤖 BAGIAN 7: BASH SCRIPTING & OTOMASI
           // ==============================================
-          BagianJudul('🤖 BAGIAN 7 — Bash Scripting & Otomasi'),
-          KartuMateri(
+          const BagianJudul('🤖 BAGIAN 7 — Bash Scripting & Otomasi'),
+          const KartuMateri(
             judul: 'Dasar Bash Script — Dari Nol',
             isi: r'''
 📄 Buat berkas: nano halo.sh
@@ -274,7 +274,7 @@ Contoh angka:
 
 # === VARIABEL ===
 nama="Dunia"
-echo "Halo, $nama!"        # Gunakan $ untuk ambil nilai variabel
+echo "Halo, $nama!"        → pakai $ untuk ambil nilai variabel
 
 # === INPUT PENGGUNA ===
 echo -n "Siapa namamu? "
@@ -298,7 +298,7 @@ done
 fungsi_saya() {
   echo "Ini pesan dari fungsi!"
 }
-fungsi_saya    # Panggil fungsi
+fungsi_saya    → panggil fungsi
 ---
 ▶️ Jalankan:
   chmod +x halo.sh    → beri izin jalankan
@@ -307,27 +307,27 @@ fungsi_saya    # Panggil fungsi
 ''',
             icon: Icons.code,
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'crontab',
-            fungsi: 'Jadwalkan perintah berjalan OTOMATIS sesuai waktu',
-            contoh: r'$ crontab -e        → buka editor jadwal\n# Format: menit jam tanggal bulan hari perintah\n  0 3 * * * ~/cadangan.sh          → tiap jam 3 pagi\n  */30 * * * * ~/cek_server.sh     → tiap 30 menit\n  0 8 * * 1-5 ~/laporan.sh         → tiap Senin-Jumat jam 8 pagi\n  0 0 1 * * ~/bulanan.sh           → tiap tanggal 1 tengah malam\n\n$ crontab -l        → lihat daftar jadwal\n$ crontab -r        → hapus semua jadwal',
+            fungsi: 'Jadwalkan perintah berjalan otomatis',
+            contoh: r'$ crontab -e        → buka editor jadwal\n# menit jam tanggal bulan hari perintah\n  0 3 * * * ~/cadangan.sh          → tiap jam 3 pagi\n  */30 * * * * ~/cek_server.sh     → tiap 30 menit\n  0 8 * * 1-5 ~/laporan.sh         → Senin-Jumat jam 8 pagi\n  0 0 1 * * ~/bulanan.sh           → tiap tanggal 1 tengah malam\n\n$ crontab -l        → lihat daftar jadwal\n$ crontab -r        → hapus semua jadwal',
           ),
 
           // ==============================================
           // 🛠️ BAGIAN 8: ALAT PENGEMBANG & LANJUTAN
           // ==============================================
-          BagianJudul('🛠️ BAGIAN 8 — Alat Pengembang & Fitur Lanjutan'),
-          KartuPerintah(
+          const BagianJudul('🛠️ BAGIAN 8 — Alat Pengembang & Fitur Lanjutan'),
+          const KartuPerintah(
             perintah: 'git',
-            fungsi: 'Kontrol versi — kelola kode sumber, kolaborasi',
+            fungsi: 'Kontrol versi — kelola kode sumber',
             contoh: r'$ git init .                  → buat repositori baru\n$ git add .                   → tandai semua berkas\n$ git commit -m "Versi pertama" → simpan perubahan\n$ git push origin main        → kirim ke GitHub\n$ git pull                    → ambil versi terbaru\n$ git status                  → lihat status berkas',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'tar / gzip / zip',
             fungsi: 'Kompresi & ekstrak berkas arsip',
             contoh: r'$ tar -czf arsip.tar.gz folder/    → kompres jadi .tar.gz\n$ tar -xzf arsip.tar.gz                 → ekstrak .tar.gz\n$ zip -r arsip.zip folder/              → kompres jadi .zip\n$ unzip arsip.zip                       → ekstrak .zip',
           ),
-          KartuPerintah(
+          const KartuPerintah(
             perintah: 'alias',
             fungsi: 'Buat nama pendek untuk perintah panjang',
             contoh: r'$ alias ll="ls -la"         → ketik ll = ls -la\n$ alias update="sudo apt update && sudo apt upgrade -y"\n$ update   → langsung jalankan update lengkap!\n\n# Agar permanen: tambahkan ke ~/.bashrc atau ~/.zshrc',
@@ -336,10 +336,10 @@ fungsi_saya    # Panggil fungsi
           // ==============================================
           // 💡 BAGIAN 9: TRIK & KEBIAASAAN AHLI
           // ==============================================
-          BagianJudul('💡 BAGIAN 9 — Trik & Kebiasaan Pengguna Ahli'),
-          KartuMateri(
+          const BagianJudul('💡 BAGIAN 9 — Trik & Kebiasaan Pengguna Ahli'),
+          const KartuMateri(
             judul: '30 Trik yang Menghemat Jam Kerja',
-            isi: '''
+            isi: r'''
 ⌨️ PINTASAN KIBOR:
   TAB          → pelengkap otomatis nama berkas/perintah (WAJIB PAKAI!)
   ↑ ↓          → panggil ulang perintah sebelumnya
@@ -350,26 +350,26 @@ fungsi_saya    # Panggil fungsi
   Ctrl + K     → hapus seluruh baris ke kanan kursor
   Ctrl + W     → hapus satu kata ke kiri
   Ctrl + L     → bersihkan layar (sama dengan perintah clear)
-  Ctrl + C     → BATALKAN perintah yang sedang berjalan — SELALU BERGUNA!
+  Ctrl + C     → BATALKAN perintah yang sedang berjalan
   Ctrl + D     → keluar dari terminal/sesi saat ini
   Ctrl + Z     → hentikan sementara proses (ketik fg untuk lanjutkan)
 
 📖 BANTUAN & INFORMASI:
-  man ls       → baca panduan lengkap perintah ls (manual)
-  ls --help    → bantuan singkat langsung
+  man ls       → baca panduan lengkap perintah ls
+  ls --help    → bantuan singkat
   whatis ls    → penjelasan singkat satu baris
   apropos cari → cari perintah yang berisi kata "cari"
 
 📝 RIWAYAT PERINTAH:
   history       → tampil semua perintah yang pernah diketik
-  !42           → jalankan perintah nomor 42 dari history
+  !42           → jalankan perintah nomor 42
   !ls           → jalankan perintah terakhir yang diawali dengan ls
   !!            → ulangi perintah terakhir
-  sudo !!       → ulangi perintah terakhir dengan sudo (sangat berguna!)
+  sudo !!       → ulangi dengan sudo (sangat berguna!)
 
 ⚠️ ATURAN EMAS:
-  JANGAN hafal SEMUA perintah. Hafal 15 yang paling sering dipakai.
-  Sisanya cari dengan: man perintah → atau Google "linux perintah nama"
+  Jangan hafal SEMUA perintah. Hafal 15 yang paling sering dipakai.
+  Sisanya cari dengan: man perintah atau Google.
   Tak perlu takut salah ketik — dari kesalahanlah kamu belajar paling cepat!
 ''',
             icon: Icons.tips_and_updates,
@@ -378,10 +378,10 @@ fungsi_saya    # Panggil fungsi
           // ==============================================
           // ⚠️ BAGIAN 10: PEMECAHAN MASALAH & KESELAMATAN
           // ==============================================
-          BagianJudul('⚠️ BAGIAN 10 — Pemecahan Masalah & Keselamatan'),
-          KartuMateri(
+          const BagianJudul('⚠️ BAGIAN 10 — Pemecahan Masalah & Keselamatan'),
+          const KartuMateri(
             judul: 'Masalah Umum & Cara Mengatasinya',
-            isi: '''
+            isi: r'''
 🔹 "Permission denied" → Tambahkan sudo, atau cek izin berkas (ls -l)
 🔹 "Command not found" → Cek ketikan, atau install paket yang sesuai
 🔹 Ruang disk penuh → Jalankan df -h, cari folder besar dengan du -sh, hapus log lama
@@ -389,7 +389,7 @@ fungsi_saya    # Panggil fungsi
 🔹 Tidak bisa masuk server → Cek koneksi (ping), cek port (nc -zv), cek firewall
 🔹 Perintah terhenti → Tekan Ctrl+C untuk membatalkan
 
-🛡️ KESELAMATAN & PENCEGAHAN:
+🛡️ KESELAMATAN:
   ✅ Selalu cek perintah sebelum tekan Enter — terutama yang diawali sudo
   ✅ Jangan jalankan perintah dari internet yang tidak kamu pahami
   ✅ Sebelum hapus folder penting — cadangkan dulu!
@@ -402,10 +402,10 @@ fungsi_saya    # Panggil fungsi
           // ==============================================
           // 📋 REFERENSI
           // ==============================================
-          BagianJudul('📋 REFERENSI CEPAT — LEMBAR BANTUAN'),
-          KartuMateri(
+          const BagianJudul('📋 REFERENSI CEPAT — LEMBAR BANTUAN'),
+          const KartuMateri(
             judul: 'Ringkasan Perintah Paling Sering Dipakai',
-            isi: '''
+            isi: r'''
 📂 NAVIGASI & BERKAS
   pwd, ls, cd, mkdir, cp, mv, rm, cat, less, head, tail
 

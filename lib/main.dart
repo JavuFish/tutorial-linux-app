@@ -245,17 +245,17 @@ Contoh angka:
             judul: 'Perintah Paket — Debian/Ubuntu & Termux',
             isi: '''
 🔹 UBUNTU/DEBIAN (PC/Server):
-$ sudo apt update && sudo apt upgrade -y   → update daftar + upgrade semua
-$ sudo apt install firefox                 → pasang program
-$ sudo apt remove firefox                  → hapus program
-$ apt search editor                        → cari program berdasarkan nama
-$ apt show firefox                         → lihat detail paket
+\\$ sudo apt update && sudo apt upgrade -y   → update daftar + upgrade semua
+\\$ sudo apt install firefox                 → pasang program
+\\$ sudo apt remove firefox                  → hapus program
+\\$ apt search editor                        → cari program berdasarkan nama
+\\$ apt show firefox                         → lihat detail paket
 
 🔹 TERMUX (Android):
-$ pkg update && pkg upgrade -y             → update sistem Termux
-$ pkg install nodejs python git            → pasang paket
-$ pkg remove nodejs                        → hapus paket
-$ pkg search flutter                       → cari paket
+\\$ pkg update && pkg upgrade -y             → update sistem Termux
+\\$ pkg install nodejs python git            → pasang paket
+\\$ pkg remove nodejs                        → hapus paket
+\\$ pkg search flutter                       → cari paket
 ''',
             icon: Icons.install_desktop,
           ),
